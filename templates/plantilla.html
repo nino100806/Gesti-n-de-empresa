@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de Equipos</title>
+</head>
+<body>
+    <h1>Listado de Equipos</h1>
+
+    <form method="POST" action="/agregar_equipo">
+        <h3>Agregar nuevo equipo</h3>
+        <input type="text" name="tipo" placeholder="Tipo" required><br>
+        <input type="text" name="marca" placeholder="Marca" required><br>
+        <input type="text" name="modelo" placeholder="Modelo" required><br>
+        <input type="text" name="procesador" placeholder="Procesador" required><br>
+        <input type="number" name="ram_gb" placeholder="RAM (GB)" required><br>
+        <input type="number" name="almacenamiento_gb" placeholder="Almacenamiento (GB)" required><br>
+        <input type="text" name="sistema_operativo" placeholder="Sistema Operativo" required><br>
+        <button type="submit">Agregar</button>
+    </form>
+
+    <h2>Equipos Registrados</h2>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Tipo</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Procesador</th>
+            <th>RAM (GB)</th>
+            <th>Almacenamiento (GB)</th>
+            <th>Sistema Operativo</th>
+        </tr>
+        {% for equipo in equipos %}
+        <tr>
+            <td>{{ equipo[0] }}</td>
+            <td>{{ equipo[1] }}</td>
+            <td>{{ equipo[2] }}</td>
+            <td>{{ equipo[3] }}</td>
+            <td>{{ equipo[4] }}</td>
+            <td>{{ equipo[5] }}</td>
+            <td>{{ equipo[6] }}</td>
+            <td>{{ equipo[7] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
